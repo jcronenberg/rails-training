@@ -35,4 +35,16 @@ class UsersController < ApplicationController
 
     render :login
   end
+
+  def logout
+    if current_user
+      reset_session
+      flash[:ok] = "Logged out!"
+      @user = User.new
+    else
+      flash[:error] = "Couldn't log you out, you're not logged in"
+    end
+
+    redirect_to users_login_path
+  end
 end

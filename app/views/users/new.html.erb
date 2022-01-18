@@ -1,6 +1,7 @@
+<h2>Create new user</h2>
 <%= form_for @user, url: users_new_path, method: :post do |f| %>
 	<%= f.text_field :username %>
 	<%= f.password_field :password %>
 
-	<%= f.submit 'register' %>
+	<%= f.submit 'Register' %>
 <% end %>

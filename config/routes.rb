@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   get '/users/login', to: 'users#login'
   post '/users/login', to: 'users#login_perform', as: 'users_login_perform'
+
+  post '/users/logout', to: 'users#logout'
   # resource :users
 end
