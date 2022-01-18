@@ -4,5 +4,8 @@ Rails.application.routes.draw do
 
   get '/users/new', to: 'users#new'
   post '/users/new', to: 'users#create'
+
+  get '/users/login', to: 'users#login'
+  post '/users/login', to: 'users#login_perform', as: 'users_login_perform'
   # resource :users
 end

@@ -15,4 +15,24 @@ class UsersController < ApplicationController
 
     render :new
   end
+
+  def login
+    @user = User.new
+  end
+
+  def login_perform
+    permitted_params = params.require(:user).permit(:username, :password)
+
+    @user = User.find_by(username: permitted_params[:username])
+
+    if @user&.authenticate(permitted_params[:password])
+      flash.now[:ok] = 'You\'re logged in!'
+      session[:user_id] = @user.id
+    else
+      flash.now[:error] = 'Failed to log in'
+      @user = User.new
+    end
+
+    render :login
+  end
 end

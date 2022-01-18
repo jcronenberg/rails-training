@@ -11,6 +11,12 @@
   </head>
 
   <body>
+	<% if current_user %>
+		Logged in as: <%= current_user.username %><br/>
+	<% else %>
+	<% end %>
+	<%= flash[:ok] %><br/>
+	<%= flash[:error] %>
     <%= yield %>
   </body>
 </html>

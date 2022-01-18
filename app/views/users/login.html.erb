@@ -1,0 +1,6 @@
+<%= form_for @user, url: users_login_perform_path, method: :post do |f| %>
+	<%= f.text_field :username %>
+	<%= f.password_field :password %>
+
+	<%= f.submit 'log in' %>
+<% end %>
