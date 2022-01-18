@@ -1,1 +1,9 @@
-<h1>test</h1>
+<%= flash[:ok] %><br/>
+<%= flash[:error] %>
+
+<%= form_for @user, url: users_new_path do |f| %>
+	<%= f.text_field :username %>
+	<%= f.password_field :password %>
+
+	<%= f.submit 'register' %>
+<% end %>
