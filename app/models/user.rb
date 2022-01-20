@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   validate :validate_username_not_included_in_password
 
+  has_many :board_threads
+
   private
 
   def validate_username_not_included_in_password

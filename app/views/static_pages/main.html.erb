@@ -1,1 +1,13 @@
 <h1>Hello World!</h1>
+
+<% @boards.each do |board| %>
+	<a href="/boards/<%= board.id %>">
+		<fieldset>
+			<%= board.title %><br/>
+			<% if board.description %>
+				<small><%= board.description %></small>
+			<% end %>
+		</fieldset>
+	</a>
+	<br/>
+<% end %>

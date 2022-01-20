@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
   post '/users/logout', to: 'users#logout'
   # resource :users
+
+  get '/boards/:id', to: 'boards#show'
+  get '/board_threads/:id', to: 'board_threads#show'
 end
