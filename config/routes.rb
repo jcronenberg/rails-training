@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post '/users/logout', to: 'users#logout'
   # resource :users
 
-  get '/boards/:id', to: 'boards#show'
-  get '/board_threads/:id', to: 'board_threads#show'
+  get '/boards/:id', to: 'boards#show', as: 'boards_show'
+  get '/board_threads/new', to: 'board_threads#new'
+  post 'board_threads/new', to: 'board_threads#create_new'
+  get '/board_threads/:id', to: 'board_threads#show', as: 'board_thread_show'
 end

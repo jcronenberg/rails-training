@@ -1,10 +1,9 @@
 <h1><%= @board.title %></h1>
 <h2><%= @board.description %></h2>
 <% @board_threads.each do |board_thread| %>
-	<a href="/board_threads/<%= board_thread.id %>">
-		<fieldset>
-			<%= board_thread.title %><br/>
-		</fieldset>
-	</a>
+	<fieldset>
+		<%= link_to board_thread.title, board_thread_show_path(board_thread) %><br/>
+	</fieldset>
 	<br/>
 <% end %>
+<%= link_to "Create new thread", board_threads_new_path(board_id: @board.id) %>
